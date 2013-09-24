@@ -1,0 +1,9 @@
+.sort-nav{min-height: 50px;}
+.dd-item{position: relative;}
+.dd-item .dd-handle{height:auto;}
+.dd-placeholder{height:100px;}
+.dd-item .tools{width:80px;line-height: 30px;text-align: center;background: #000;opacity: .4;filter:alpha(opacity=40);position: absolute;top:0px;right:0px;}
+.modal{font-size: 14px;font-family: "microsoft yahei"}
+.modal h4{font-size: 14px;display: inline-block;line-height: 34px;padding:0px;margin:0px;margin-right:5px;}
+.modal label{display: inline-block;margin-right:10px;}
+.modal iframe{position: absolute;top:-999999em;}

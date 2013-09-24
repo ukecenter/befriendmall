@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>缤纷商城管理平台</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="assets/css/select2_metro.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/admin.css" />
+	<!-- END PAGE LEVEL STYLES -->
+	<link rel="shortcut icon" href="assets/image/favicon.ico" /></head>
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body class="page-header-fixed">
+	<!-- BEGIN HEADER -->
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<!-- BEGIN LOGO -->
+				<a class="brand" href="index.html">
+				缤纷商城管理平台
+				</a>
+				<!-- END LOGO -->
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+				<img src="assets/image/menu-toggler.png" alt="" />
+				</a>
+				<!-- END RESPONSIVE MENU TOGGLER -->
+				<!-- BEGIN TOP NAVIGATION MENU -->
+				<ul class="nav pull-right">
+					<!-- BEGIN USER LOGIN DROPDOWN -->
+					<li class="dropdown user">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<span class="username">管理员</span>
+						<i class="icon-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="login.html"><i class="icon-key"></i> 注销</a></li>
+						</ul>
+					</li>
+					<!-- END USER LOGIN DROPDOWN -->
+				</ul>
+				<!-- END TOP NAVIGATION MENU --> 
+			</div>
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+	<!-- END HEADER -->
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container row-fluid">
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar nav-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->        
+			<ul class="page-sidebar-menu">
+				<li>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler hidden-phone"></div>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+				</li>
+				
+				<li class="start">
+					<a href="commodity.html">
+					<i class="icon-th"></i> 
+					<span class="title">商品管理</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href=""><i class="icon-plus"></i>新建商品</a>
+						</li>
+						<li>
+							<a href="">手机壳</a>
+						</li>
+						<li>
+							<a href="">手机挂件</a>
+						</li>
+						<li>
+							<a href="">手机耳机</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				<li >
+					<a href="category.html">
+					<i class="icon-list"></i> 
+					<span class="title">类目管理</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="advertisement.html">
+					<i class="icon-picture "></i> 
+					<span class="title">广告区管理</span>
+					</a>
+				</li>
+				<li class="last ">
+					<a href="account.html">
+					<i class="icon-user"></i> 
+					<span class="title">帐号管理</span>
+					</a>
+				</li>
+
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+		<!-- END SIDEBAR -->
+		<!-- BEGIN PAGE -->
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div id="portlet-config" class="modal hide">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button"></button>
+					<h3>删除</h3>
+				</div>
+				<div class="modal-body">
+					<p>删除</p>
+				</div>
+			</div>
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- BEGIN PAGE CONTAINER-->        
+			<div class="container-fluid padding-top-20">
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid margin-top-10">
+					<div class="span12">
+						<button type="submit" class="btn green" id="btn_new">新建管理员</button>
+					</div>
+				</div>
+				<div class="row-fluid margin-top-10">
+					<div class="span12">
+						<div class="alert alert-success">
+							<button class="close" data-dismiss="alert"></button>
+							欢迎光临，<span>admin</span>！
+						</div>
+					</div>
+				</div>
+				<script id="admin-info" type="text/template">
+					<div class="span4">
+						<div class="portlet box blue">
+							<div class="portlet-title">
+								<div class="caption"><i class="icon-user"></i>{{=it.name}}</div>
+								<div class="tools">
+									<a href="javascript:;" class="collapse"></a>
+								</div>
+							</div>
+							<div class="portlet-body form form-2 admin-form" data-id="1">
+								
+									<div class="control-group">
+										<label class="control-label">用户名<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap" value="{{=it.name}}"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="password" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">重复密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="repassword" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">类目权限<span class="required">*</span></label>
+										<div class="controls categeory_options">
+											<label><input type="checkbox" value="1"/>类目1</label>
+											<label><input type="checkbox" value="2"/>类目1</label>
+											<label><input type="checkbox" value="3"/>类目1</label>
+											<label><input type="checkbox" value="4"/>类目1</label>
+											<label><input type="checkbox" value="5"/>类目1</label>
+											<label><input type="checkbox" value="6"/>类目1</label>
+										</div>
+									</div>
+									<div class="form-actions">
+										<div class="alert alert-error hide">
+											<button class="close" data-dismiss="alert"></button>
+											请正确填写表单。
+										</div>
+										<div class="alert alert-success hide">
+											<button class="close" data-dismiss="alert"></button>
+											表单已正确提交！
+										</div>
+										<button type="submit" class="btn green btn_save">保存</button>
+										<button type="submit" class="btn red btn_del">删除</button>
+										<button type="reset" class="btn">取消</button>
+									</div>
+								
+								
+							</div>
+						</div>
+				</script>
+				<div class="row-fluid normal-admin">
+					<div class="span4">
+						<div class="portlet box blue">
+							<div class="portlet-title">
+								<div class="caption"><i class="icon-user"></i>管理员1</div>
+								<div class="tools">
+									<a href="javascript:;" class="collapse"></a>
+								</div>
+							</div>
+							<div class="portlet-body form form-2 admin-form" data-id="1">
+								
+									<div class="control-group">
+										<label class="control-label">用户名<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="password" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">重复密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="repassword" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">类目权限<span class="required">*</span></label>
+										<div class="controls categeory_options">
+											<label><input type="checkbox" value="1"/>类目1</label>
+											<label><input type="checkbox" value="2"/>类目1</label>
+											<label><input type="checkbox" value="3"/>类目1</label>
+											<label><input type="checkbox" value="4"/>类目1</label>
+											<label><input type="checkbox" value="5"/>类目1</label>
+											<label><input type="checkbox" value="6"/>类目1</label>
+										</div>
+									</div>
+									<div class="form-actions">
+										<div class="alert alert-error hide">
+											<button class="close" data-dismiss="alert"></button>
+											请正确填写表单。
+										</div>
+										<div class="alert alert-success hide">
+											<button class="close" data-dismiss="alert"></button>
+											表单已正确提交！
+										</div>
+										<button type="submit" class="btn green btn_save">保存</button>
+										<button type="submit" class="btn red btn_del">删除</button>
+										<button type="reset" class="btn">取消</button>
+									</div>
+								
+								
+							</div>
+						</div>
+					</div>
+					<div class="span4">
+						<div class="portlet box blue">
+							<div class="portlet-title">
+								<div class="caption"><i class="icon-user"></i>管理员1</div>
+								<div class="tools">
+									<a href="javascript:;" class="collapse"></a>
+								</div>
+							</div>
+							<div class="portlet-body form  form-2">
+								<form action="#" id="form_sample_1">
+									<div class="control-group">
+										<label class="control-label">用户名<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">重复密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="form-actions">
+										<button type="submit" class="btn green">保存</button>
+										<button type="submit" class="btn red">删除</button>
+										<button type="reset" class="btn">取消</button>
+									</div>
+								</form>
+								
+							</div>
+						</div>
+					</div>
+					<div class="span4">
+						<div class="portlet box blue">
+							<div class="portlet-title">
+								<div class="caption"><i class="icon-user"></i>管理员1</div>
+								<div class="tools">
+									<a href="javascript:;" class="collapse"></a>
+								</div>
+							</div>
+							<div class="portlet-body form  form-2">
+								<form action="#" id="form_sample_1">
+									<div class="control-group">
+										<label class="control-label">用户名<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">重复密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="form-actions">
+										<button type="submit" class="btn green">保存</button>
+										<button type="submit" class="btn red">删除</button>
+										<button type="button" class="btn">取消</button>
+									</div>
+								</form>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="portlet box green">
+							<div class="portlet-title">
+								<div class="caption"><i class="icon-user"></i>超级管理员设置</div>
+								<div class="tools">
+									<a href="javascript:;" class="collapse"></a>
+								</div>
+							</div>
+							<div class="portlet-body form">
+								<form action="#" id="form_sample_1" class="form-horizontal">
+									<div class="control-group">
+										<label class="control-label">用户名<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">重复密码<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+										</div>
+									</div>
+									<div class="form-actions">
+										<button type="submit" class="btn green">保存</button>
+										
+										<button type="button" class="btn">取消</button>
+									</div>
+								</form>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- END PAGE CONTENT -->
+			</div>
+			<!-- END PAGE CONTAINER-->
+		</div>
+		<!-- END PAGE -->
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN FOOTER -->
+	<div class="footer">
+		<div class="footer-inner">
+			2013 &copy; Befriendmall - Admin.
+		</div>
+		<div class="footer-tools">
+			<span class="go-top">
+			<i class="icon-angle-up"></i>
+			</span>
+		</div>
+	</div>
+
+
+	<div id="new_modal" class="modal hide fade admin-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="false">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+			<h3 id="myModalLabel1">新建管理员</h3>
+		</div>
+		<div class="modal-body">
+			<div class="portlet-body form  form-2">
+				<form action="#" id="form_sample_1">
+					<div class="control-group">
+						<label class="control-label">用户名<span class="required">*</span></label>
+						<div class="controls">
+							<input type="text" name="name" data-required="1" class=" m-wrap"/>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">密码<span class="required">*</span></label>
+						<div class="controls">
+							<input type="text" name="name" data-required="1" class=" m-wrap"/>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">重复密码<span class="required">*</span></label>
+						<div class="controls">
+							<input type="text" name="name" data-required="1" class=" m-wrap"/>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">类目权限<span class="required">*</span></label>
+						<div class="controls categeory_options">
+							<label><input type="checkbox" value=""/>类目1</label>
+							<label><input type="checkbox" value=""/>类目1</label>
+							<label><input type="checkbox" value=""/>类目1</label>
+							<label><input type="checkbox" value=""/>类目1</label>
+							<label><input type="checkbox" value=""/>类目1</label>
+							<label><input type="checkbox" value=""/>类目1</label>
+						</div>
+					</div>
+					<div class="alert alert-error hide">
+						<button class="close" data-dismiss="alert"></button>
+						请正确填写表单。
+					</div>
+					<div class="alert alert-success hide">
+						<button class="close" data-dismiss="alert"></button>
+						表单已正确提交！
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			<button class="btn yellow btn_new_save" id="btn_save">确定</button>
+		</div>
+	</div>
+	<!-- END FOOTER -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="assets/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+	<script src="assets/js/doT.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/select2.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+	<script src="assets/js/excanvas.min.js"></script>
+	<script src="assets/js/respond.min.js"></script>  
+	<![endif]-->
+	<script src="assets/js/jquery.plugins.min.js" type="text/javascript"></script>
+	<!-- END CORE PLUGINS -->
+	
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="assets/js/app.js"></script> 
+	<script src="assets/js/admin.js"></script> 
+	<!--<script src="assets/js/table-editable.js"></script>    --> 
+
+	<!-- END PAGE LEVEL PLUGINS -->
+	<script>
+		jQuery(document).ready(function() {       
+		   App.init();
+		   Admin.init();
+		});
+
+	</script>
+<!-- END BODY -->
+
+</html>

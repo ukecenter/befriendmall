@@ -1,0 +1,9 @@
+.sort-nav{min-height: 50px;}
+.dd-item{position: relative;}
+.dd-item .tools{width:120px;line-height: 30px;text-align: center;background: #000;opacity: .4;filter:alpha(opacity=40);position: absolute;top:0px;right:0px;}
+/*.dd-add,.dd-item{float:left;width:160px;height:160px;margin-right:5px;border: 1px solid #ccc;margin-bottom:5px;position: relative;}
+.dd-item .tools{width:100%;line-height: 30px;text-align: center;background: #000;opacity: .4;filter:alpha(opacity=40);position: absolute;bottom:0px;left:0px;}
+.dd-item:hover .tools{opacity: .6;filter:alpha(opacity=60);}
+.dd-add{font-size: 80px;line-height: 160px;text-align: center;font-family: "microsoft yahei";font-weight: 700;color:#ccc;cursor:pointer;}
+.dd-handle{width:160px;height:160px;margin:0px;padding:5px;border:none;}
+.ui-state-highlight{background: #dedede;float:left;width:160px;height:160px;margin-right:5px;border: 1px dashed #ccc;margin-bottom:5px;}*/

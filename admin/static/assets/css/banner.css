@@ -1,0 +1,6 @@
+.sort-nav{min-height: 50px;}
+.dd-item{position: relative;}
+.dd-item .dd-handle{height:auto;}
+.dd-placeholder{height:100px;}
+.dd-item .tools{width:80px;line-height: 30px;text-align: center;background: #000;opacity: .4;filter:alpha(opacity=40);position: absolute;top:0px;right:0px;}
+
