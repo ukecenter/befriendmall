@@ -6928,3 +6928,8 @@ For tablets and phones
     width: 100px;
   } 
 } 
+
+@media print{ 
+.print {display:block;} 
+.notPrint {display:none;} 
+} 

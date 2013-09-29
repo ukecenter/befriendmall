@@ -6,8 +6,7 @@ var Admin = function () {
     return {
         init: function () {
             AdminTmpl = doT.template($('#admin-info').html());
-            console.log(doT)
-            console.log(AdminTmpl)
+            
            var adminForm=$(".admin-form");
            var that=this;
            adminForm.on("click",".btn_save",function(){
@@ -54,7 +53,6 @@ var Admin = function () {
                 
                 var postData={name:name,password:password,id:id,categeorys:categeorys};
                 App.showLoading("正在提交数据...");
-                
                 $.post(newUrl,postData,function(result){
                     App.hideLoading();
                     adminForm.find(".alert-success").show();
@@ -78,7 +76,8 @@ var Admin = function () {
                     categeorys[i]=$(options[i]).val();
                 }
                 categeorys=categeorys.join(",");
-                var postData={name:name,password:password,id:id,categeorys:categeorys};
+                var postData={name:name,password:password,categeorys:categeorys};
+                console.log(postData)
                 App.showLoading("正在提交数据...");
                 $.post(newUrl,postData,function(result){
                     
